@@ -1,0 +1,3 @@
+[submodule "external/kdl"]
+	path = external/kdl
+	url = git@github.com:kdl-org/kdl.git
