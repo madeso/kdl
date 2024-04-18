@@ -4,7 +4,7 @@
 #include <string>
 #include <optional>
 
-namespace cuddle
+namespace kdlh
 {
 
 struct Document
@@ -20,4 +20,4 @@ struct ParseResult
 ParseResult ParseString(std::string_view source);
 std::string ToString(const Document& doc);
 
-}  //  namespace cuddle
+}  //  namespace kdlh

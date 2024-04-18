@@ -37,11 +37,11 @@ source_group("" FILES ${tests_src})
 add_executable(tests ${tests_src})
 target_link_libraries(tests
     PUBLIC
-        cuddle::cuddle
+        kdlh::kdlh
     PRIVATE
-        cuddle::project_options
-        cuddle::project_warnings
-        cuddle::catch
+        kdlh::project_options
+        kdlh::project_warnings
+        kdlh::catch
 )
 
 include(../external/catch/Catch.cmake)

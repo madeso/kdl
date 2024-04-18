@@ -1,14 +1,14 @@
 set(src
-    cuddle/cuddle.cc
-    cuddle/cuddle.h
+    kdlh/kdlh.cc
+    kdlh/kdlh.h
 )
-add_library(cuddle STATIC ${src})
-target_link_libraries(cuddle
+add_library(kdlh STATIC ${src})
+target_link_libraries(kdlh
     PRIVATE
-        cuddle::project_options
-        cuddle::project_warnings
+        kdlh::project_options
+        kdlh::project_warnings
 )
-target_include_directories(cuddle
+target_include_directories(kdlh
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
 )
-add_library(cuddle::cuddle ALIAS cuddle)
+add_library(kdlh::kdlh ALIAS kdlh)

@@ -1,7 +1,7 @@
 #include <fstream>
 #include <iostream>
 
-#include "cuddle/cuddle.h"
+#include "kdlh/kdlh.h"
 
 void print_help(const std::string& name)
 {
@@ -132,7 +132,7 @@ int main(int argc, char* const argv[])
 				(std::istreambuf_iterator<char>(file_stream)), std::istreambuf_iterator<char>()
 			);
 
-			const auto parse_result = cuddle::ParseString(file_data);
+			const auto parse_result = kdlh::ParseString(file_data);
 
 			if (parse_result.has_error())
 			{
@@ -148,7 +148,7 @@ int main(int argc, char* const argv[])
 			{
 				if (please_print)
 				{
-					std::cout << cuddle::ToString(*parse_result.doc);
+					std::cout << kdlh::ToString(*parse_result.doc);
 				}
 			}
 		}

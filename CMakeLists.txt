@@ -1,23 +1,23 @@
 cmake_minimum_required(VERSION 3.5.0)
 
-if(NOT DEFINED CUDDLE_MASTER_PROJECT)
-    set(CUDDLE_MASTER_PROJECT OFF)
+if(NOT DEFINED KDLH_MASTER_PROJECT)
+    set(KDLH_MASTER_PROJECT OFF)
     if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
-        set(CUDDLE_MASTER_PROJECT ON)
+        set(KDLH_MASTER_PROJECT ON)
     endif()
 endif()
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-project(cuddle)
+project(kdlh)
 
 ###############################################################################
 # common properties
-add_library(cuddle_project_options INTERFACE)
-add_library(cuddle::project_options ALIAS cuddle_project_options)
-target_compile_features(cuddle_project_options INTERFACE cxx_std_17)
+add_library(kdlh_project_options INTERFACE)
+add_library(kdlh::project_options ALIAS kdlh_project_options)
+target_compile_features(kdlh_project_options INTERFACE cxx_std_17)
 
-add_library(cuddle_project_warnings INTERFACE)
-add_library(cuddle::project_warnings ALIAS cuddle_project_warnings)
+add_library(kdlh_project_warnings INTERFACE)
+add_library(kdlh::project_warnings ALIAS kdlh_project_warnings)
 # todo(Gustav): add extra compiler warnings
 
 
@@ -32,7 +32,7 @@ add_subdirectory(src)
 
 ###############################################################################
 # examples
-if(CUDDLE_MASTER_PROJECT)
+if(KDLH_MASTER_PROJECT)
     add_subdirectory(examples)
 endif()
 
@@ -41,12 +41,12 @@ endif()
 
 ###############################################################################
 # tests
-if(CUDDLE_MASTER_PROJECT)
-    add_library(cuddle_catch INTERFACE)
-    target_include_directories(cuddle_catch
+if(KDLH_MASTER_PROJECT)
+    add_library(kdlh_catch INTERFACE)
+    target_include_directories(kdlh_catch
         INTERFACE SYSTEM external/catch
     )
-    add_library(cuddle::catch ALIAS cuddle_catch)
+    add_library(kdlh::catch ALIAS kdlh_catch)
 
     include(CTest)
     add_subdirectory(tests)

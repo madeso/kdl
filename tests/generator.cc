@@ -45,9 +45,9 @@ int main(int argc, char* argv[])
 	std::string line;
 
 	out << "#include \"catch.hpp\"\n";
-	out << "#include \"cuddle/cuddle.h\"\n";
+	out << "#include \"kdlh/kdlh.h\"\n";
 	out << "\n";
-	out << "using namespace cuddle;\n";
+	out << "using namespace kdlh;\n";
 	out << "\n";
 	out << "TEST_CASE(\"" << name << "\")\n";
 	out << "{\n";

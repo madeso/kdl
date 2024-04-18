@@ -1,13 +1,13 @@
 #include <iostream>
 #include <string>
 
-// This is a basic example how to use cuddle
+// This is a basic example how to use kdlh
 
-#include "cuddle/cuddle.h"
+#include "kdlh/kdlh.h"
 
 int main()
 {
-	std::cout << "Hello cuddle\n";
+	std::cout << "Hello kdlh\n";
 
 	return 0;
 }

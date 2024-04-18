@@ -1,6 +1,6 @@
-#include "cuddle/cuddle.h"
+#include "kdlh/kdlh.h"
 
-namespace cuddle
+namespace kdlh
 {
 
 ParseResult ParseString(std::string_view source)
@@ -18,4 +18,4 @@ std::string ToString(const Document&)
 	return "";
 }
 
-}  //  namespace cuddle
+}  //  namespace kdlh
