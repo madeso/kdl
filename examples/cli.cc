@@ -140,15 +140,15 @@ int main(int argc, char* const argv[])
 
 				if (! is_silent)
 				{
-					// todo(Gustav): improve error handling...
 					std::cerr << "Failed to parse\n";
+					std::cerr << parse_result.get_error() << '\n';
 				}
 			}
 			else
 			{
 				if (please_print)
 				{
-					std::cout << kdlh::ToString(*parse_result.doc);
+					std::cout << kdlh::ToString(parse_result.require_doc());
 				}
 			}
 		}

@@ -65,8 +65,9 @@ int main(int argc, char* argv[])
 	}
 	else
 	{
+		out << "\tINFO(loaded.get_error());\n";
 		out << "\tREQUIRE(loaded.has_error() == false);\n";
-		out << "\tconst auto str = ToString(*loaded.doc);\n";
+		out << "\tconst auto str = ToString(loaded.require_doc());\n";
 		out << "\tREQUIRE(str == R\"kdl(\n";
 		while (expected)
 		{
