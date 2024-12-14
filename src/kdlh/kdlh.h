@@ -38,6 +38,7 @@ struct Node
 
 	std::unordered_map<std::string, Value> properties;
 	std::vector<Value> arguments;
+	std::optional<std::vector<Node>> children;
 };
 
 struct Document
@@ -47,14 +48,22 @@ struct Document
 
 // ---------------------------------------------------------------------------
 
+struct Message
+{
+	int line;
+	int offset;
+	std::string text;
+};
+
 struct ParseResult
 {
 	bool has_error() const;
 
-	std::string_view get_error() const;
+	std::string get_error() const;
 	const Document& require_doc() const;
 
-	std::variant<Document, std::string> data;
+	std::optional<Document> document;
+	std::vector<Message> messages;
 };
 
 ParseResult ParseString(std::string_view source);
